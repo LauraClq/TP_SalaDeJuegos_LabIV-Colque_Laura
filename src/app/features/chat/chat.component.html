@@ -1,0 +1,24 @@
+<div class="chat-container" [ngClass]="{ 'show': abierto }">
+    <div class="card text-center">
+        <div class="card-header">Chat de Jugadores</div>
+        <div class="card-body" id="myCard"><!--ACA VA LOS MENSAJES ES RECORRER UNA LISTA DE MENSAJES-->
+            <p *ngFor="let unMensaje of mensajes" class="p-2 chats"
+            [ngClass]="user?.uid == unMensaje.emisor?.uid ? 'enviado' : 'recibido' ">
+            <!--Nombre del usuario-->
+            <span [ngClass]="user?.uid == unMensaje.emisor?.uid ? 'email-1' : 'email-2' ">{{unMensaje.emisor.username}}</span>
+            <br>
+            {{unMensaje.mensaje}}
+            <br>
+            <span class="fecha">{{unMensaje.fecha}}</span>
+            </p>
+        </div>
+        <form class="card-footer text-muted input-group">
+            <input type="text" class="form-control" placeholder="Ingrese su mensaje" [(ngModel)]="mensajeAEnviar" [ngModelOptions]="{standalone: true}"/>
+            <div class="input-group-append" (click)="enviarMensaje()">
+                <span class="input-group-text span-efecto" id="basic-addon2">
+                    <img class="img-efecto" src="../../../assets/icon-enviar.gif" alt="icon" width="45px">
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

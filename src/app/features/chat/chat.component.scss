@@ -1,0 +1,90 @@
+.chat-container {
+    position: fixed;
+    right: 1.3rem;
+    width: 23rem;
+    height: 100vh;
+    z-index: 1000; // Asegúrate de que este valor sea lo suficientemente alto, asi se superpone por sobre otros elememtos
+    background-color: transparent;
+    transition: transform 0.5s ease-out;
+    transform: translateY(-100%);
+    //bottom: 0rem; //este seria de abajo
+    top: 6.3rem;//pocision fija de arriba, si navego por todas las secciones esto queda fijo
+}
+
+.chat-container.show { //cuando se despliega - anulan los demas valores de mi .chat-container y veseversa
+    transform: translateY(0);
+    height: 90vh; //el marco del div general
+    box-shadow: 0 0 20px 7px rgba(72, 25, 190, 0.94);
+}
+
+.img-efecto:active{
+    transform: scale(0.9);
+}
+
+.card-body {
+    //background-image: url('../../../assets/fondos/chat.gif');
+    //background-size: cover;
+    //background-position: center;
+    
+    //background-size: cover;
+    //background-position: center;
+    overflow: scroll;
+    padding: 0.3rem;
+}
+
+.card-body::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    background: rgb(210 44 243 / 25%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    height: 86.1vh; //el card de mi chat
+}
+
+.enviado {
+    display: block;
+    float: right;
+    background-color: #917df5be;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    min-width: 50.1%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.recibido {
+    display: block;
+    float: left;
+    background-color: #d55fefb4;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    min-width: 50.1%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.email-1 {
+    font-size: 0.7;
+    color: #ffee00;
+}
+
+.email-2 {
+    font-size: 0.7;
+    color: #90e0ef;
+}
+
+.fecha {
+    font-size: 0.6rem;
+    color: #edf2f4;
+    text-align: right;
+    float: right;
+}
+
+.span-efecto{
+    cursor: pointer;
+    background: #ffe5ec;
+    border-radius: 0px;
+}
