@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class PreguntasService {
   constructor(private http: HttpClient) {}
 
+  private image: string = 'https://hp-api.onrender.com/api/characters';
   obtenerPreguntas() {
-    return this.http.get('https://thesimpsonsquoteapi.glitch.me/quotes');
+    return this.http.get(this.image);
   }
 }
