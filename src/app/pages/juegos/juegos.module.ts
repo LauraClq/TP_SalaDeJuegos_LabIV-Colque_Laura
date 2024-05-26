@@ -6,6 +6,7 @@ import { PreguntadosComponent } from './preguntados/preguntados.component';
 import { RouterModule } from '@angular/router';
 import { JuegosRoutingModule } from './juegos-routing.module';
 import { HomeJuegosComponent } from './home-juegos/home-juegos.component';
+import { FrenesiDeEsferasComponent } from './frenesi-de-esferas/frenesi-de-esferas.component';
 
 
 
@@ -14,7 +15,8 @@ import { HomeJuegosComponent } from './home-juegos/home-juegos.component';
     HomeJuegosComponent,
     AhorcadoComponent,
     MayorMenorComponent,
-    PreguntadosComponent
+    PreguntadosComponent,
+    FrenesiDeEsferasComponent
   ],
   imports: [
     CommonModule,

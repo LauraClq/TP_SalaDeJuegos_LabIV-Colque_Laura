@@ -1,0 +1,152 @@
+.game-container {
+  width: 863px;
+  height: 377px;
+  padding: 20px;
+  margin: 0px auto;
+  border: 10px dotted purple;
+  border-radius: 5px;
+  overflow: hidden;
+  .esferas {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-color 0.5s;
+    &.icon1 {
+      background-image: url("../../../../assets/icon1.png");
+    }
+    &.icon2 {
+      background-image: url("../../../../assets/icon2.png");
+    }
+    &.icon3 {
+      background-image: url("../../../../assets/icon3.png");
+    }
+    &.icon4 {
+      background-image: url("../../../../assets/icon4.png");
+    }
+    &.icon5 {
+      background-image: url("../../../../assets/icon5.png");
+    }
+    &.icon6 {
+      background-image: url("../../../../assets/icon6.png");
+    }
+    &.icon7 {
+      background-image: url("../../../../assets/icon7.png");
+    }
+    &.icon8 {
+      background-image: url("../../../../assets/icon8.png");
+    }
+    &.icon9 {
+      background-image: url("../../../../assets/icon9.png");
+    }
+    &.icon10 {
+      background-image: url("../../../../assets/icon10.png");
+    }
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.reglas-container {
+  //border: 1px solid black;
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    width: 300px;
+    text-align: justify;
+  }
+}
+
+.mensajes {
+  margin: 20px;
+  width: 70%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  div {
+    background-color: white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+}
+
+.container-mijuego {
+  padding-top: 10vh;
+  margin-top: 100px;
+}
+
+button {
+  background-color: palevioletred;
+  color: #24261a;
+  padding: 12px 10px;
+  border: 1px solid black;
+  border-radius: 54px;
+  cursor: pointer;
+  margin: 20px;
+  font-weight: bold;
+  width: 200px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: black;
+  border: 1px solid palegoldenrod;
+  color: #fff;
+}
+
+.gelatine {
+  animation: gelatine 0.9s infinite;
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .game-container {
+    width: 700px;
+    height: 450px;
+  }
+}
+
