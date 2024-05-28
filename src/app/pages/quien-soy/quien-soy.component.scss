@@ -1,26 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
+.container-imagen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../assets/fobo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .container{
-    width: 850px;
+    width: 980px;
     min-height: 250px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 150px;
-    background: rgba(162, 32, 162, 0.15);
+    margin-top: 180px;
+    background: rgba(101, 113, 255, 0.292);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(9px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(30px);
     border-radius: 1rem;
     padding: 1rem;
     z-index: 10;
-    color: rgb(222, 16, 16);
+    color: #FCE0F1;
 }
 
 .container-biografia{
-    span {
-        color: red;
+    span , strong, h3{
+        color: #ff8fab;
     }
+    margin-right: 20px;
+}
+
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 17px;
 }
 
 .img-custom{
@@ -31,13 +49,13 @@
     top: 3rem;
     width: 20vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px red;
+    box-shadow: 0 0 25px #BC9AFF;
     transition: 0.4s ease-in-out;
     cursor: pointer;
 }
 
 .img-custom img:hover{
-    box-shadow: 0 0 25px red,
-                0 0 50px red,
-                0 0 100px red;
+    box-shadow: 0 0 25px #BC9AFF,
+                0 0 50px #BC9AFF,
+                0 0 80px #BC9AFF;
 }
