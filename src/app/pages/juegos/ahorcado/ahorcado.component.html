@@ -1,14 +1,12 @@
 <section class="background-image">
   <div class="container">
-    <h3 class="titulo-ahorcado concert-one-regular">A H O R C A D O</h3>
     <div class="contenedor-general row">
       <div class="col">
         <div>
           <img
             class="img-horcado"
             src="../../../../assets/ahorcado/ahorcado-{{7 - intentos}}.png"
-            alt="horcado"
-          />
+            alt="horcado"/>
         </div>
         <p class="intentos concert-one-regular">Te quedan {{ intentos }}/6 intentos</p>
       </div>
@@ -19,18 +17,15 @@
               <h1 class="d-inline p-2">{{ letra }}</h1>
             </div>
           </div>
-         <!-- <span class="puntaje">(Puntaje: {{ puntuacion }})</span>-->
         </div>
         <div class="letras-conteiner">
           <button
             *ngFor="let letra of letras"
             class="btn-letra concert-one-regular"
             [disabled]="mostrarLetrasUsadas(letra)" 
-            (click)="adivinarPalabra(letra)"
-          >
+            (click)="adivinarPalabra(letra)">
             {{ letra }}
           </button>
-          <p class="concert-one-regular">Letras Usadas: {{ letrasSeleccionadas.join(', ') }}</p>
         </div>
         <div *ngIf="!juegoActivo">
           <button class="btn-reiniciar" (click)="iniciarJuego()">JUGAR OTRA VEZ</button>
