@@ -44,6 +44,20 @@
     color: #fff;
 }
 
+.btn-reinicio{
+    border-radius: 54px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #4f772d;
+    color: #fff;
+}
+
+.btn-reinicio:hover{
+    background-color: #ecf39e;
+    border: 1px solid #4f772d;
+    color: black;
+}
+
 .perdiste {
     color: red;
 }
@@ -59,13 +73,11 @@
 .mensaje {
     margin: 0 auto;
     width: 200px;
-    font-weight: 700;
-    font-size: 20px;
 }
 
 .didact-gothic-regular {
   font-family: "Didact Gothic", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 30px;
+  font-size: 20px;
 }

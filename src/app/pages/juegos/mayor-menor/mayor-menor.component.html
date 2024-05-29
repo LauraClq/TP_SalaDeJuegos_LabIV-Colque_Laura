@@ -3,7 +3,8 @@
     <header>
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
         <h4 class="didact-gothic-regular ">Puntos: {{ puntos }}</h4>
-       <h5 class="didact-gothic-regular ">Intentos restantes: {{ intentos }}</h5>
+        <h5 class="didact-gothic-regular ">Intentos restantes: {{ intentos }}</h5>
+        <img src="../../../../assets/cartas.gif" width="150px" height="150px">
         <div class="container-mensaje didact-gothic-regular ">
           <p *ngIf="perdio; else then_content" class="perdiste mensaje">{{ mensaje }}</p>
           <ng-template #then_content>
@@ -68,7 +69,7 @@
          <button
           *ngIf="!juegoActivado"
           type="button"
-          class="w-100 btn btn-lg btn-danger mt-3 didact-gothic-regular "
+          class="w-100 btn btn-lg mt-3 didact-gothic-regular btn-reinicio"
           (click)="reinicarJuego()"
         >
           Reiniciar Juego

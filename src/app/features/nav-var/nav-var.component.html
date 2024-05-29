@@ -26,11 +26,8 @@
     <span *ngIf="user" class="userInfo">
       <span style="color: rgb(215, 31, 31);" class="navbar-brand" href="#">{{user.username}}</span>
     </span>
-    <a *ngIf="user" class="button-custom" (click)="cerrarSesion()">Cerrar Sesion</a>
-    <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <button *ngIf="user" class="nav-link btn btn-link" type="submit" (click)="toggleChat()">Chat</button> <!--Si toco el el boton el chatVisible cambia a true-->
+    <button *ngIf="user" class="button-custom" type="button" (click)="cerrarSesion()" aria-controls="offcanvasNavbar">Cerrar Sesion</button>
+    <button *ngIf="user" class="button-custom btn-chat" type="submit" (click)="toggleChat()">Chat</button> <!--Si toco el el boton el chatVisible cambia a true-->
   </div>
 </nav>
 

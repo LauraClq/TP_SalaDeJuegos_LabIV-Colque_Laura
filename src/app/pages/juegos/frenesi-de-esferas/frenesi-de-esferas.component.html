@@ -5,13 +5,13 @@
                 <div class="mensajes didact-gothic-regular">
                     <div class="gelatine" *ngIf="juegoActivado && !juegoDesactivado && !gano">{{ tiempo }}</div>
                     <div *ngIf="!juegoActivado && !juegoDesactivado">
-                        ¡¡Mueve el mouse dentro del rectangulo !!
+                        ¡¡Mueve el mouse dentro del rectangulo 🖱️ !!
                     </div>
                     <div *ngIf="juegoActivado && juegoDesactivado && gano">
-                        ¡Muy bien, ganasteee!
+                        ¡Muy bien, ganasteee 😆!
                     </div>
                     <div *ngIf="juegoActivado && juegoDesactivado && !gano">
-                        ¡Oh no!¡te faltaron {{ reprogramar }} circulos!
+                        ¡Te faltaron {{ reprogramar }} circulos 😭!
                     </div>
                 </div>
                 <div *ngIf="juegoDesactivado didact-gothic-regular">

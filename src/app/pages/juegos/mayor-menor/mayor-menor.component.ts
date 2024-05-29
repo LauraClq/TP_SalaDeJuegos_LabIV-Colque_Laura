@@ -107,7 +107,7 @@ export class MayorMenorComponent implements OnInit {
     } else {
       this.perdio = true;
       this.mensaje =
-        'Perdiste la partida. Tus puntos fueron: ' + this.puntos + '.';
+        'Uuups! No adivinaste.';
     }
   }
 
@@ -122,7 +122,7 @@ export class MayorMenorComponent implements OnInit {
     this.puntos = 0;
     this.perdio = false;
     this.juegoActivado = true;
-    this.mensaje = 'El juego se ha reiniciado. Buen suerta';
+    this.mensaje = 'El juego se ha reiniciado. Buena suerte!!';
     this.imagenCartaAnteior = ''; //si es vacio
     this.obtenerCartas();
   }

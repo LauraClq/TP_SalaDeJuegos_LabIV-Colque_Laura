@@ -24,39 +24,49 @@ export class AuthService {
 
   constructor() {
     this.usuario$ = this.authServ.authState.pipe(
-      switchMap(usuario => {
+      switchMap((usuario) => {
         if (usuario) {
-          return this.firestoreServ.doc<Usuario>(`usuarios/${usuario.uid}`).valueChanges();
-        }
-        else
-        {
+          return this.firestoreServ
+            .doc<Usuario>(`usuarios/${usuario.uid}`)
+            .valueChanges();
+        } else {
           return of(null);
         }
       })
     );
   }
 
-  autenticacion(email: string, password: string) {
-
-      return signInWithEmailAndPassword(this.auth, email, password).then(res =>{
+  async autenticacion(email: string, password: string) {
+    return await signInWithEmailAndPassword(this.auth, email, password).then(
+      (res) => {
         if (res.user) {
-        const date = new Date();
-        const loginDatos = {
-          email: email,
-          date: date,
-        };
-        this.save(loginDatos, 'LoginLog');
+          this.guardarLogin(email);
+        }
+        return res;
       }
-      return res;
-      });
+    );
   }
 
   async registro(user: Usuario) {
-    return await createUserWithEmailAndPassword(this.auth,user.email,user.password);
+    return await createUserWithEmailAndPassword(this.auth,user.email,user.password).then((res) =>{
+      if (res.user) {
+        this.guardarLogin(user.email);
+      }
+      return res;
+    })
+  }
+
+  guardarLogin(email: string) {
+    const date = new Date();
+    const loginDatos = {
+      email: email,
+      date: date,
+    };
+    this.save(loginDatos, 'LoginLog');
   }
 
   //GUARDAR EN FIREBASE EL LOS LOGS DE LOS LOGIN
-  save(data: any, path: string) {
+  private save(data: any, path: string) {
     const col = collection(this.firestore, path);
     addDoc(col, data);
   }
@@ -71,7 +81,11 @@ export class AuthService {
   //Cerrar sesion
   cerrarSesion() {
     this.auth.signOut();
-    this.swalService.crearSwal('Sesión cerrada. Hasta la próxima', 'success', 1500);
+    this.swalService.crearSwal(
+      'Sesión cerrada. Hasta la próxima',
+      'success',
+      1500
+    );
     this.router.navigate(['/auth/login']);
   }
 

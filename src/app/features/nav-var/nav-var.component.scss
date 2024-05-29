@@ -23,11 +23,16 @@
     border-radius: 50px;
     text-decoration: none;
     transition: 0.3s background-color;
+    border: none;
 }
 
 .button-custom:hover{
     background-color: coral;
     cursor: pointer;
+}
+
+.btn-chat{
+    margin-left: 20px;
 }
 
 .navbar-togger{
