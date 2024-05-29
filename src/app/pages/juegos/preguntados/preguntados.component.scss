@@ -61,9 +61,33 @@ container-personaje {
     margin: 1rem auto;
 }
 
-.btn-opcion:hover {
-    background-color: #13b4b4;
-    box-shadow: 0px 15px 20px rgba(0, 255, 242, 0.4);
+.Gryffindor:hover {
+    background-color: #A60028;
+    box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.421);
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+    transform: translateY(-7px);
+}
+
+.Slytherin:hover {
+    background-color: #125D3E;
+    box-shadow: 0px 15px 20px rgba(2, 92, 21, 0.473);
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+    transform: translateY(-7px);
+}
+
+.Hufflepuff:hover {
+    background-color: #E79408;
+    box-shadow: 0px 15px 20px rgba(255, 179, 0, 0.619);
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+    transform: translateY(-7px);
+}
+
+.Ravenclaw:hover {
+    background-color: #1C5D97;
+    box-shadow: 0px 15px 20px rgba(0, 85, 255, 0.619);
     color: #fff;
     text-shadow: 1px 1px 2px black;
     transform: translateY(-7px);

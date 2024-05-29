@@ -8,10 +8,10 @@
         <p *ngIf="juegoActivado" class="texto">¿De que casa es este personaje?</p>
         <p *ngIf="!juegoActivado" class="texto-juegoTerminado">Se han agotado tus intentos. ¡Puntos acumulados: {{ puntos }}!</p>
         <div *ngIf="juegoActivado" class="opciones">
-            <button class="btn-opcion" (click)="verificarRespuesta('Gryffindor')">Gryffindor</button>
-            <button class="btn-opcion" (click)="verificarRespuesta('Slytherin')">Slytherin</button>
-            <button class="btn-opcion" (click)="verificarRespuesta('Hufflepuff')">Hufflepuff</button>
-            <button class="btn-opcion" (click)="verificarRespuesta('Ravenclaw')">Ravenclaw</button>
+            <button class="btn-opcion Gryffindor" (click)="verificarRespuesta('Gryffindor')">Gryffindor</button>
+            <button class="btn-opcion Slytherin" (click)="verificarRespuesta('Slytherin')">Slytherin</button>
+            <button class="btn-opcion Hufflepuff" (click)="verificarRespuesta('Hufflepuff')">Hufflepuff</button>
+            <button class="btn-opcion Ravenclaw" (click)="verificarRespuesta('Ravenclaw')">Ravenclaw</button>
         </div>
         <div *ngIf="!juegoActivado">
             <button class="btn-reiniciar" (click)="reiniciarJuego()">Reiniciar Juego</button>
