@@ -15,7 +15,6 @@
   padding: 20px;
   margin: 0px auto;
   border: 10px dotted purple;
-  border-radius: 5px;
   overflow: hidden;
   .esferas {
     width: 40px;
@@ -62,20 +61,12 @@
   align-items: center;
   font-family: "Didact Gothic", sans-serif;
   font-weight: 600;
-  font-size: 25px;
-  p {
-    width: 300px;
-    text-align: justify;
-  }
 }
 
 .mensajes {
   margin: 20px;
   width: 70%;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 30px;
 
   div {
