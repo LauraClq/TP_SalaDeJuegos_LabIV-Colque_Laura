@@ -2,13 +2,9 @@
   <div class="container rounded bg-light mt-3 py-3 d-flex justify-content-around align-items-center">
     <header>
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <div>
-          <h2 class="">¿Mayor o menor?</h2>
-          <p class="fs-5 text-muted">Adivina si la próxima carta será mayor o menor</p>
-        </div>
-        <h4 class="">Puntos {{ puntos }}</h4>
-       <h5 class="">Intentos restantes: {{ intentos }}</h5>
-        <div class="container-mensaje">
+        <h4 class="didact-gothic-regular ">Puntos: {{ puntos }}</h4>
+       <h5 class="didact-gothic-regular ">Intentos restantes: {{ intentos }}</h5>
+        <div class="container-mensaje didact-gothic-regular ">
           <p *ngIf="perdio; else then_content" class="perdiste mensaje">{{ mensaje }}</p>
           <ng-template #then_content>
             <p class="gano mensaje">{{ mensaje }}</p>
@@ -21,7 +17,7 @@
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3 fondo">
-              <h4 class="my-0 fw-normal">Anterior</h4>
+              <h4 class="my-0 fw-normal didact-gothic-regular ">Anterior</h4>
             </div>
             <div class="card-body fondo">
               <img
@@ -37,7 +33,7 @@
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3 fondo">
-              <h4 class="my-0 fw-normal">Actual</h4>
+              <h4 class="my-0 fw-normal didact-gothic-regular ">Actual</h4>
             </div>
             <div class="card-body fondo">
               <img
@@ -49,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <div class="btn-group w-100 didact-gothic-regular" role="group">
           <button
           *ngIf="juegoActivado"
             type="button"
@@ -72,7 +68,7 @@
          <button
           *ngIf="!juegoActivado"
           type="button"
-          class="w-100 btn btn-lg btn-danger mt-3"
+          class="w-100 btn btn-lg btn-danger mt-3 didact-gothic-regular "
           (click)="reinicarJuego()"
         >
           Reiniciar Juego

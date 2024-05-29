@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 .fondo {
-    color: #c1121f;
+    color: #ecf39e;
     background-color: black;
 }
 
@@ -12,6 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ecf39e;
+    background-image: linear-gradient(62deg, #ecf39e 0%, #90a955 50%);
+}
+
+.container{
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .card-body {
@@ -20,10 +28,9 @@
 }
 
 .boton {
-    background-color: #ffb703;
+    background-color: #ecf39e;
     color: #24261a;
     padding: 12px 10px;
-    border: 1px solid black;
     border-radius: 54px;
     cursor: pointer;
 
@@ -34,7 +41,7 @@
 
 .boton:hover {
     background-color: black;
-    border: 1px solid #ffb703;
+    border: 1px solid #4f772d;
     color: #fff;
 }
 
@@ -55,4 +62,11 @@
     width: 200px;
     font-weight: 700;
     font-size: 20px;
+}
+
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
 }

@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 .chat-container {
     position: fixed;
     right: 1.3rem;
     width: 23rem;
     height: 100vh;
-    z-index: 1000; // Asegúrate de que este valor sea lo suficientemente alto, asi se superpone por sobre otros elememtos
+    z-index: 1000; 
     background-color: transparent;
     transition: transform 0.5s ease-out;
     transform: translateY(-100%);
     //bottom: 0rem; //este seria de abajo
-    top: 6.3rem;//pocision fija de arriba, si navego por todas las secciones esto queda fijo
+    top: 5.5rem;//pocision fija de arriba, si navego por todas las secciones esto queda fijo
 }
 
-.chat-container.show { //cuando se despliega - anulan los demas valores de mi .chat-container y veseversa
+.chat-container.show { //cuando se despliega - anulan los demas valores de mi .chat-container y viseversa
     transform: translateY(0);
     height: 90vh; //el marco del div general
     box-shadow: 0 0 20px 7px rgba(72, 25, 190, 0.94);
@@ -21,13 +23,22 @@
     transform: scale(0.9);
 }
 
+.card-header{
+    color: #fff;
+    background-color: #000014;
+}
+
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 17px;
+}
+
 .card-body {
-    //background-image: url('../../../assets/fondos/chat.gif');
-    //background-size: cover;
-    //background-position: center;
-    
-    //background-size: cover;
-    //background-position: center;
+    background-image: url('../../../assets/fondo-chat-1.jpg');
+    background-size: cover;
+    background-position: center;
     overflow: scroll;
     padding: 0.3rem;
 }
@@ -41,7 +52,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.2px);
     -webkit-backdrop-filter: blur(4.2px);
-    height: 86.1vh; //el card de mi chat
+    height: 87.6vh; //el card de mi chat
 }
 
 .enviado {
