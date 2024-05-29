@@ -2,10 +2,10 @@
   <div class="container rounded bg-light mt-3 py-3 d-flex justify-content-around align-items-center">
     <header>
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h4 class="didact-gothic-regular ">Puntos: {{ puntos }}</h4>
-        <h5 class="didact-gothic-regular ">Intentos restantes: {{ intentos }}</h5>
-        <img src="../../../../assets/cartas.gif" width="150px" height="150px">
-        <div class="container-mensaje didact-gothic-regular ">
+        <h4>Puntos: {{ puntos }}</h4>
+        <h5>Intentos restantes: {{ intentos }}</h5>
+        <img src="../../../../assets/cartas.gif" width="150px" height="150px" />
+        <div class="container-mensaje">
           <p *ngIf="perdio; else then_content" class="perdiste mensaje">{{ mensaje }}</p>
           <ng-template #then_content>
             <p class="gano mensaje">{{ mensaje }}</p>
@@ -18,60 +18,29 @@
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3 fondo">
-              <h4 class="my-0 fw-normal didact-gothic-regular ">Anterior</h4>
+              <h4 class="my-0 fw-normal">Anterior</h4>
             </div>
             <div class="card-body fondo">
-              <img
-                class="imagen-anterior"
-                src="{{ mostrarCartaVieja() }}"
-                alt="cartaAnterior"
-                width="max"
-                height="250"
-              />
+              <img class="imagen-anterior" src="{{ mostrarCartaVieja() }}" alt="cartaAnterior" width="max" height="250"/>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3 fondo">
-              <h4 class="my-0 fw-normal didact-gothic-regular ">Actual</h4>
+              <h4 class="my-0 fw-normal">Actual</h4>
             </div>
             <div class="card-body fondo">
-              <img
-                src="{{ imagenCartaActual }}"
-                alt="cartaActual"
-                width="max"
-                height="250"
-              />
+              <img src="{{ imagenCartaActual }}" alt="cartaActual" width="max" height="250"/>
             </div>
           </div>
         </div>
         <div class="btn-group w-100 didact-gothic-regular" role="group">
-          <button
-          *ngIf="juegoActivado"
-            type="button"
-            class="w-100 btn btn-lg boton"
-            (click)="elegirSiEsMayorMenor('menor')"
-          >
-            Menor
-            <i class="bi bi-arrow-down-circle"></i>
+          <button *ngIf="juegoActivado" type="button" class="w-100 btn btn-lg boton" (click)="elegirSiEsMayorMenor('menor')">Menor
           </button>
-          <button
-          *ngIf="juegoActivado"
-            type="button"
-            class="w-100 btn btn-lg boton"
-            (click)="elegirSiEsMayorMenor('mayor')"
-          >
-            Mayor
-            <i class="bi bi-arrow-up-circle"></i>
-          </button>
+          <button *ngIf="juegoActivado" type="button" class="w-100 btn btn-lg boton" (click)="elegirSiEsMayorMenor('mayor')">Mayor</button>
         </div>
-         <button
-          *ngIf="!juegoActivado"
-          type="button"
-          class="w-100 btn btn-lg mt-3 didact-gothic-regular btn-reinicio"
-          (click)="reinicarJuego()"
-        >
+        <button *ngIf="!juegoActivado" type="button" class="w-100 btn btn-lg mt-3 btn-reinicio" (click)="reinicarJuego()">
           Reiniciar Juego
         </button>
       </div>

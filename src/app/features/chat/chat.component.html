@@ -1,6 +1,6 @@
 <div class="chat-container" [ngClass]="{ 'show': abierto }">
     <div class="card text-center">
-        <div class="card-header didact-gothic-regular">Chat de Jugadores</div>
+        <div class="card-header">Chat de Jugadores</div>
         <div class="card-body" id="myCard"><!--ACA VA LOS MENSAJES ES RECORRER UNA LISTA DE MENSAJES-->
             <p *ngFor="let unMensaje of mensajes" class="p-2 chats"
             [ngClass]="user?.uid == unMensaje.emisor?.uid ? 'enviado' : 'recibido' ">

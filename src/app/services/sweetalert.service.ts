@@ -16,4 +16,11 @@ export class SwalService {
       timerProgressBar: true,
     });
   }
+  avisoSwal(mensaje: string, icon: SweetAlertIcon, text: string): void {
+    Swal.fire({
+      text: mensaje,
+      icon: icon,
+      title: text,
+    });
+  }
 }

@@ -8,7 +8,7 @@
             src="../../../../assets/ahorcado/ahorcado-{{7 - intentos}}.png"
             alt="horcado"/>
         </div>
-        <p class="intentos concert-one-regular">Te quedan {{ intentos }}/6 intentos</p>
+        <p class="intentos">Te quedan {{ intentos }}/6 intentos</p>
       </div>
       <div class="col contenedor-botones">
         <div class="row palabra-adivinar">
@@ -21,7 +21,7 @@
         <div class="letras-conteiner">
           <button
             *ngFor="let letra of letras"
-            class="btn-letra concert-one-regular"
+            class="btn-letra"
             [disabled]="mostrarLetrasUsadas(letra)" 
             (click)="adivinarPalabra(letra)">
             {{ letra }}

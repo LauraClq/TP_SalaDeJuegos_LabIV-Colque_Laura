@@ -2,7 +2,7 @@
     <div class="container-mijuego">
         <div class="d-flex container">
             <div class="reglas-container">
-                <div class="mensajes didact-gothic-regular">
+                <div class="mensajes">
                     <div class="gelatine" *ngIf="juegoActivado && !juegoDesactivado && !gano">{{ tiempo }}</div>
                     <div *ngIf="!juegoActivado && !juegoDesactivado">
                         ¡¡Mueve el mouse dentro del rectangulo 🖱️ !!
@@ -14,7 +14,7 @@
                         ¡Te faltaron {{ reprogramar }} circulos 😭!
                     </div>
                 </div>
-                <div *ngIf="juegoDesactivado didact-gothic-regular">
+                <div *ngIf="juegoDesactivado">
                     <button class="pulse" (click)="reiniciarJuego()">JUGAR DE NUEVO</button>
                 </div>
             </div>

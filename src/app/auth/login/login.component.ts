@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../servicios/auth.service';
-import Swal from 'sweetalert2';
+import { SwalService } from 'src/app/services/sweetalert.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent {
   private AuthServicio = inject(AuthService);
   selected: string = '';
 
-  constructor(private formBuilder: FormBuilder, private route: Router) {
+  constructor(private formBuilder: FormBuilder, private route: Router,  private SweetServicio: SwalService) {
     this.loginFormulario = this.formBuilder.group({
       email: [
         '',
@@ -37,20 +37,11 @@ export class LoginComponent {
       )
         .then((res) => {
           this.loginFormulario.reset();
-          Swal.fire({
-            icon: 'success',
-            title: `Bienvenido ${res.user.email}`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          this.SweetServicio.crearSwal(`Bienvenido ${res.user.email}`,'success',1500);
           this.route.navigate(['home']);
         })
         .catch((e) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Por favor, ingrese una dirección de correo electrónico o contraseña válida.',
-          });
+          this.SweetServicio.avisoSwal('Por favor, ingrese una dirección de correo electrónico o contraseña válida.','error','Error');
         });
     }
   }
