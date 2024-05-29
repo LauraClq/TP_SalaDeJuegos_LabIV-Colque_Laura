@@ -24,13 +24,6 @@
     font-size: 20px;
 }
 
-h5,h4{
-    font-family: "Didact Gothic", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 20px;
-}
-
 .card-body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -42,7 +35,6 @@ h5,h4{
     padding: 12px 10px;
     border-radius: 54px;
     cursor: pointer;
-    font-weight: bold;
     width: 150px;
     transition: background-color 0.3s ease-in-out !important;
 }

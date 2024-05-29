@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../servicios/auth.service';
-import Swal from 'sweetalert2';
 import { Usuario } from '../model/Usuario.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { SwalService } from 'src/app/services/sweetalert.service';
 
 @Component({
   selector: 'app-registro',
@@ -15,7 +15,7 @@ export class RegistroComponent {
   public registroFormulario: FormGroup;
   private AuthServicio = inject(AuthService);
 
-  constructor(private formBuilder: FormBuilder, private route: Router, private firestore: AngularFirestore) 
+  constructor(private formBuilder: FormBuilder, private route: Router, private firestore: AngularFirestore, private SweetServ: SwalService) 
   {
     this.registroFormulario = this.formBuilder.group({
       username: ['', [Validators.required, Validators.maxLength(10)]],
@@ -43,21 +43,12 @@ export class RegistroComponent {
           const datosUser = { ...this.registroFormulario.value}; //guardo los datos del usuario creado, obtenidos del formulario
           datosUser.uid = uid; //guardo el id generado automaticamte
           await this.firestore.collection("usuarios").doc(uid).set(datosUser);
-          Swal.fire({
-            icon: 'success',
-            title: `Registro exitoso!! Bienvenido ${datosUser.username}`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          this.SweetServ.crearSwal(`Registro exitoso!! Bienvenido ${datosUser.username}`,'success',1500);
           this.registroFormulario.reset();
           this.route.navigate(['home']);
         })
         .catch((error) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Ooops...',
-            text: this.AuthServicio.crearMensajeError(error.code),
-          });
+          this.SweetServ.avisoSwal(this.AuthServicio.crearMensajeError(error.code),'error','Uuuups...')
         });
     }
   }

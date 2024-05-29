@@ -14,10 +14,7 @@ export class FrenesiDeEsferasComponent implements OnInit {
     'icon4',
     'icon5',
     'icon6',
-    'icon7',
-    'icon8',
-    'icon9',
-    'icon10'
+    'icon7'
   ];
   public colorRamdon = 0;
   public tiempo = 20;
