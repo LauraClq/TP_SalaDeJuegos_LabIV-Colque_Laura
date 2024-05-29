@@ -24,6 +24,13 @@
                 <div class="link-registro">
                     <p>¿No tienes una cuentas? Que estas esperando <a routerLink="/auth/registro">Registrate</a></p>
                 </div>
+                <select class="form-select" [(ngModel)]="selected" (change)="accesoRapido()" [ngModelOptions]="{standalone: true}">
+                    <option value="" disabled selected>Acceso Rápido</option>
+                    <option value="invitado">Invitado</option>
+                    <option value="anonimo">Anónimo</option>
+                    <option value="admin">Admin</option>
+                    <option>Ninguno</option>
+                </select>
             </form>
         </div>
     </div>

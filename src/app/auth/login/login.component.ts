@@ -11,10 +11,10 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
   public loginFormulario: FormGroup;
-  private AuthServicio = inject(AuthService)
+  private AuthServicio = inject(AuthService);
+  selected: string = '';
 
-  constructor(private formBuilder: FormBuilder, private route: Router) 
-  {
+  constructor(private formBuilder: FormBuilder, private route: Router) {
     this.loginFormulario = this.formBuilder.group({
       email: [
         '',
@@ -52,6 +52,35 @@ export class LoginComponent {
             text: 'Por favor, ingrese una dirección de correo electrónico o contraseña válida.',
           });
         });
+    }
+  }
+
+  accesoRapido() {
+    switch (this.selected) {
+      case 'admin':
+        this.loginFormulario.setValue({
+          email: 'admin@gmail.com',
+          password: 'admin123',
+        });
+        break;
+      case 'invitado':
+        this.loginFormulario.setValue({
+          email: 'invitado@gmail.com',
+          password: 'invitado12',
+        });
+        break;
+      case 'anonimo':
+        this.loginFormulario.setValue({
+          email: 'anonimo@gmail.com',
+          password: 'anonimo12',
+        });
+        break;
+      default:
+        this.loginFormulario.setValue({
+          email: '',
+          password: '',
+        });
+        break;
     }
   }
 }

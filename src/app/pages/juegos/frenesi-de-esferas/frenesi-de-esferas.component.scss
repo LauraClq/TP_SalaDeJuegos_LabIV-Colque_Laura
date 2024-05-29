@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+.container-imagen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../../../../assets/fondo-esferas.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .game-container {
   width: 863px;
   height: 377px;
@@ -82,27 +95,31 @@
   }
 }
 
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 25px;
+}
+
 .container-mijuego {
   padding-top: 10vh;
   margin-top: 100px;
 }
 
 button {
-  background-color: palevioletred;
-  color: #24261a;
+  background-color: purple;
+  color: #f8f8f8;
   padding: 12px 10px;
-  border: 1px solid black;
   border-radius: 54px;
   cursor: pointer;
   margin: 20px;
-  font-weight: bold;
   width: 200px;
   transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: black;
-  border: 1px solid palegoldenrod;
+  background-color: rgb(129, 26, 224);
   color: #fff;
 }
 
