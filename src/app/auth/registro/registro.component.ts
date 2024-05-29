@@ -14,6 +14,7 @@ import { SwalService } from 'src/app/services/sweetalert.service';
 export class RegistroComponent {
   public registroFormulario: FormGroup;
   private AuthServicio = inject(AuthService);
+  public mensaje: string;
 
   constructor(private formBuilder: FormBuilder, private route: Router, private firestore: AngularFirestore, private SweetServ: SwalService) 
   {
@@ -48,7 +49,8 @@ export class RegistroComponent {
           this.route.navigate(['home']);
         })
         .catch((error) => {
-          this.SweetServ.avisoSwal(this.AuthServicio.crearMensajeError(error.code),'error','Uuuups...')
+          this.mensaje = this.AuthServicio.crearMensajeError(error.code);
+          this.SweetServ.avisoSwal(this.mensaje,'error','Uuuups...')
         });
     }
   }
