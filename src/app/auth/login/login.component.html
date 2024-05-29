@@ -1,29 +1,32 @@
 <section class="container-imagen">
     <div class="container">
-        <form [formGroup]="loginFormulario">
-                <div class="input-box">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="" formControlName="email" autocomplete="email">
+        <div class="container-form">
+            <form [formGroup]="loginFormulario">
+                <div class="input-box form-floating mb-3">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su email" formControlName="email">
+                    <i class="fa-regular fa-envelope icon"></i>
                     <label for="inputEmail">Email</label>
-                    <i></i>
                 </div>
                 <div class="validators" *ngIf="loginFormulario.controls['email'].errors && loginFormulario.controls['email'].touched">
                     <div *ngIf="loginFormulario.controls['email'].errors['required']">Error, ingrese el email.</div>
-                    <div *ngIf="loginFormulario.controls['email'].errors['pattern']">Erro, ingrese un email válido.</div>
+                    <div *ngIf="loginFormulario.controls['email'].errors['pattern']">Error, ingrese un email válido.</div>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="" autocomplete="password">
-                    <label for="inputPassword">Password</label>
-                    <i></i>
+                <div class="input-box form-floating mb-3">
+                    <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Ingrese su contraseña">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <label for="inputPassword">Contraseña</label>
                 </div>
                 <div class="validators" *ngIf="loginFormulario.controls['password'].errors && loginFormulario.controls['password'].touched">
                     <div *ngIf="loginFormulario.controls['password'].errors['required']">Error, ingrese la contraseña.</div>
                     <div *ngIf="loginFormulario.controls['password'].errors['maxlength']">Solo se permite hasta 10 caracteres.</div>
                 </div>
-            <div class="links">
-                <a>¿No tenes cuenta? Que estas esperando Registrate</a>
-            </div>
-            <button class="btn-login" (click)="inicarSesion()" [disabled]="loginFormulario.invalid">Iniciar Sesión</button>
-        </form>
+                <button class="btn-login" (click)="inicarSesion()" [disabled]="loginFormulario.invalid">Iniciar Sesión</button>
+                <div class="link-registro">
+                    <p>¿No tienes una cuentas? Que estas esperando <a routerLink="/auth/registro">Registrate</a></p>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
+
 
