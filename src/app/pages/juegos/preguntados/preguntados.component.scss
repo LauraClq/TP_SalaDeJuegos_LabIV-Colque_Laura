@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+.container-imagen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../../../../assets/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -31,15 +44,24 @@ container-personaje {
 
 .texto-juegoTerminado{
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    color: #712E1E;
+    background-color: #E8D1CB;
+    border-radius: 40px;
 }
 
 .texto{
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
+    margin-top: 8px;
+    color: #712E1E;
+    background-color: #E8D1CB;
+    border-radius: 40px;
+}
+
+.didact-gothic-regular {
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 25px;
 }
 
 .btn-opcion {
