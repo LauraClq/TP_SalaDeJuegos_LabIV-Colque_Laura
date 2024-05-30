@@ -50,7 +50,9 @@ export class RegistroComponent {
         })
         .catch((error) => {
           this.mensaje = this.AuthServicio.crearMensajeError(error.code);
+          console.log(this.mensaje);
           this.SweetServ.avisoSwal(this.mensaje,'error','Uuuups...')
+          this.registroFormulario.reset();
         });
     }
   }
